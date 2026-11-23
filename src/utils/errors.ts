@@ -27,6 +27,11 @@ export class NotFoundError extends AppError {
     }
 }
 
+export class BadRequestError extends AppError {
+    constructor(message: string) {
+        super(message, 400, 'BAD_REQUEST');
+    }
+}
 export class ValidationError extends AppError {
     public readonly details: any;
 

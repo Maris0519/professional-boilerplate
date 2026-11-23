@@ -5,8 +5,16 @@ import { loginSchema } from '../dto/auth.dto';
 import { asyncHandler } from '../utils/asyncHandler';
 import { authMiddleware } from '../middleware/auth';
 
+import { verificationRoutes } from './verificationRoutes';  // ← Add this
+
+
+
+
 
 export const authRoutes = Router();
+
+authRoutes.use('/', verificationRoutes);  // ← Add this
+
 
 
 // POST /api/auth/login - Public endpoint
